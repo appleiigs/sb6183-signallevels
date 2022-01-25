@@ -5,7 +5,7 @@ from html_table_parser.parser import HTMLTableParser
 
 
 statusURL = "http://192.168.100.1/RgConnect.asp"
-logFileName = "sb6183log.csv"
+outputFileName = "sb6183log.csv"
 
 
 def url_get_contents(url):
@@ -52,7 +52,7 @@ for ch in channel:
         data=chData[ch]
     else:
         data=empty
-    downOutput=downOutput+",".join(data)
+    downOutput=downOutput+",".join(data)+","
 
 #now parse upstream signal levels table
 #labels (row 1):
@@ -78,11 +78,10 @@ for ch in channel:
         data=chData[ch]
     else:
         data=empty
-    upOutput=upOutput+",".join(data)
+    upOutput=upOutput+",".join(data)+","
 
 sampleTime=time.strftime("%m/%d/%y,%H:%M:%S,")
 
-outputFileName="signallevels.csv"
 f=open(outputFileName, "a")
 f.write(sampleTime)
 f.write(downOutput)
