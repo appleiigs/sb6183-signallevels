@@ -8,4 +8,4 @@ python sb6183_signallevels.py
 
 Notes:
    - Assumes that the SB6183 signal level page is at http:////192.168.100.1/RgConnect.asp  Edit the "statusURL" to change that.
-   - Outputs the tables to a CSV file named sb6183log.csv.  Edit the "logFileName" to change that.
+   - Outputs the tables to a CSV file named sb6183log.csv.  Edit the "outputFileName" to change that.
